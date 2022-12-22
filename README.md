@@ -1,5 +1,100 @@
 # 株式会社ゆめみ iOS エンジニアコードチェック課題
 
+## 動作確認
+
+<img src="https://user-images.githubusercontent.com/62702170/209234870-38951b9a-b9cd-41b7-b289-93519e6ef799.gif" width="300">
+
+## API
+
+リクエスト情報の管理→```GithubAPIRequest```
+
+https://github.com/ShuheiYoshidaJP/yumemi-ios-codecheck/blob/280e83fcd5dd53366789115abd940f2c78cef1bd/iOSEngineerCodeCheck/API/GithubAPI.swift#L16
+
+リクエスト＆取得データのデコード→```APIProvider```
+
+https://github.com/ShuheiYoshidaJP/yumemi-ios-codecheck/blob/280e83fcd5dd53366789115abd940f2c78cef1bd/iOSEngineerCodeCheck/API/APIProvider.swift#L16
+
+データ取得部分を```RxSession```でラップ→テストしやすいように
+
+https://github.com/ShuheiYoshidaJP/yumemi-ios-codecheck/blob/280e83fcd5dd53366789115abd940f2c78cef1bd/iOSEngineerCodeCheck/API/RxSession.swift#L16
+
+リクエストのテスト
+
+モックの作成
+
+https://github.com/ShuheiYoshidaJP/yumemi-ios-codecheck/blob/280e83fcd5dd53366789115abd940f2c78cef1bd/iOSEngineerCodeCheckTests/API/URLSessionMock.swift#L14
+
+
+レスポンスでエラーが返ってくる場合のテスト
+
+https://github.com/ShuheiYoshidaJP/yumemi-ios-codecheck/blob/280e83fcd5dd53366789115abd940f2c78cef1bd/iOSEngineerCodeCheckTests/API/APIProviderTest.swift#L23-L37
+
+## リポジトリ一覧画面
+
+MainViewModel
+
+テキスト入力→リポジトリ情報出力
+
+https://github.com/ShuheiYoshidaJP/yumemi-ios-codecheck/blob/280e83fcd5dd53366789115abd940f2c78cef1bd/iOSEngineerCodeCheck/ViewModel/MainViewModel.swift#L45-L64
+
+1. テキスト入力して1秒待つ
+2. テキストのバリデータ（0文字・1文字ははじく）
+3. リポジトリ一覧情報取得&出力
+
+MainViewController
+
+TableViewをスクロールするとキーボードをしまう
+
+https://github.com/ShuheiYoshidaJP/yumemi-ios-codecheck/blob/280e83fcd5dd53366789115abd940f2c78cef1bd/iOSEngineerCodeCheck/View/MainViewController.swift#L22
+
+## リポジトリ詳細画面
+
+画面遷移部分
+
+https://github.com/ShuheiYoshidaJP/yumemi-ios-codecheck/blob/280e83fcd5dd53366789115abd940f2c78cef1bd/iOSEngineerCodeCheck/View/MainViewController.swift#L54-L58
+
+ViewはXibで作成
+
+Xibを呼び出す拡張機能を作成
+
+https://github.com/ShuheiYoshidaJP/yumemi-ios-codecheck/blob/280e83fcd5dd53366789115abd940f2c78cef1bd/iOSEngineerCodeCheck/Extension/UIViewControllerExtension.swift#L12-L17
+
+## ソースコードの管理
+
+SwiftLintを使用
+
+https://github.com/ShuheiYoshidaJP/yumemi-ios-codecheck/blob/280e83fcd5dd53366789115abd940f2c78cef1bd/iOSEngineerCodeCheck.xcodeproj/project.pbxproj#L424
+
+ビルド時に起動
+
+## 使用ライブラリ
+
+https://github.com/ShuheiYoshidaJP/yumemi-ios-codecheck/blob/280e83fcd5dd53366789115abd940f2c78cef1bd/Podfile#L7-L9
+
+CocoaPodを使用
+
+```
+make install_pod
+```
+
+```install_pod```の詳細
+
+https://github.com/ShuheiYoshidaJP/yumemi-ios-codecheck/blob/280e83fcd5dd53366789115abd940f2c78cef1bd/Makefile#L13-L14
+
+
+## コミットメッセージ
+
+* fix：バグ修正
+* add：新規（ファイル）機能追加
+* update：機能修正（バグではない）
+* change：仕様変更
+* disable：無効化（コメントアウト等）
+* remove：削除（ファイル）
+* upgrade：バージョンアップ
+
+[参考](https://qiita.com/itosho/items/9565c6ad2ffc24c09364)
+
+
 <details>
   <summary>課題の内容</summary>
 
@@ -50,16 +145,3 @@ Issues を確認した上、本プロジェクトを [**Duplicate** してくだ
 
   
 </details>
-
-
-## コミットメッセージ
-
-* fix：バグ修正
-* add：新規（ファイル）機能追加
-* update：機能修正（バグではない）
-* change：仕様変更
-* disable：無効化（コメントアウト等）
-* remove：削除（ファイル）
-* upgrade：バージョンアップ
-
-[参考](https://qiita.com/itosho/items/9565c6ad2ffc24c09364)
