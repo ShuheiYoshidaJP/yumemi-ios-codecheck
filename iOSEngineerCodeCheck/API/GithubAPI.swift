@@ -14,16 +14,15 @@ protocol GithubAPIBase {
 }
 
 final class GithubAPI: GithubAPIBase {
-    
+
     private var provider: APIProviderBase
-    
+
     init(provider: APIProviderBase = APIProvider()) {
         self.provider = provider
     }
-    
+
     func fetchRepository(inputText: String) -> Observable<RepoResponse> {
         let githubAPIReq = GithubAPIRequest(requestType: .searchRepository(inputText, 30))
         return provider.exec(request: githubAPIReq)
     }
 }
-

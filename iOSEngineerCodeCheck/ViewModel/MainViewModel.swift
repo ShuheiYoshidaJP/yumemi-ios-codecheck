@@ -11,12 +11,12 @@ import RxSwift
 import RxCocoa
 
 final class MainViewModel {
-    
+
     struct Dependency {
-        
+
         var githubAPI: GithubAPIBase
         var scheduler: SchedulerType
-        
+
         public static var `default`: Dependency {
             Dependency(
                 githubAPI: GithubAPI(),
@@ -24,37 +24,37 @@ final class MainViewModel {
             )
         }
     }
-    
+
     struct Input {
         let searchText: Observable<String>
     }
-    
+
     struct Output {
         let repos: Observable<[Repo]>
     }
-    
+
     private let dependency: Dependency
-    
+
     init(dependency: Dependency = .default) {
         self.dependency = dependency
     }
-    
+
     func transform(input: Input) -> Output {
-        
+
         let delayedInputSearchText = input.searchText
             .debounce(.seconds(1), scheduler: dependency.scheduler)
             .distinctUntilChanged()
-        
+
         let validatedSearchText = delayedInputSearchText
-            .filter{ $0.count >= 2 }
-        
+            .filter { $0.count >= 2 }
+
         let repos = validatedSearchText
             .flatMap { searchText in
                 self.dependency.githubAPI.fetchRepository(inputText: searchText)
             }
             .catchAndReturn(RepoResponse.empty)
             .map { $0.items }
-        
+
         return Output(repos: repos)
     }
 }

@@ -14,11 +14,11 @@ protocol APIProviderBase {
 }
 
 class APIProvider: APIProviderBase {
-    
+
     struct Dependency {
         var session: URLSession
         var decoder: JSONDecoder
-        
+
         public static var `default`: Dependency {
             Dependency(
                 session: .shared,
@@ -26,13 +26,13 @@ class APIProvider: APIProviderBase {
             )
         }
     }
-    
+
     private let dependency: Dependency
-    
+
     init(dependency: Dependency = .default) {
         self.dependency = dependency
     }
-    
+
     func exec<T: APIRequest>(request: T) -> Observable<T.Response> {
         let uRequest = Observable.just(request.url)
             .compactMap { $0 }

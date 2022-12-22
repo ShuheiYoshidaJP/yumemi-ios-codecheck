@@ -11,8 +11,7 @@ import UIKit
 class RepoTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var fullNameLabel: UILabel!
-    
-    
+
     var item: Repo! {
         didSet {
             nameLabel.text = item.name
