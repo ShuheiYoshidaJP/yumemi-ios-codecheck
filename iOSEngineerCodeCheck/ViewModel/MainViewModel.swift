@@ -39,7 +39,7 @@ final class MainViewModel {
         self.dependency = dependency
     }
     
-    func tranAPIsform(input: Input) -> Output {
+    func transform(input: Input) -> Output {
         
         let delayedInputSearchText = input.searchText
             .debounce(.seconds(1), scheduler: dependency.scheduler)
