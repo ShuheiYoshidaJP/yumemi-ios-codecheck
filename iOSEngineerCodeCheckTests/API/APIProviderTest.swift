@@ -10,7 +10,7 @@ import XCTest
 import RxSwift
 @testable import iOSEngineerCodeCheck
 
-class APIProviderTest: XCTestCase {
+final class APIProviderTest: XCTestCase {
 
     private let requestType: GithubAPIRequest.RequestType = .searchingRepo("Swift", 30)
     private var request: GithubAPIRequest!

@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 @testable import iOSEngineerCodeCheck
 
-class RxSessionMock: RxSessionBase {
+final class RxSessionMock: RxSessionBase {
     private let statusCode: Int
 
     init(statusCode: Int) {

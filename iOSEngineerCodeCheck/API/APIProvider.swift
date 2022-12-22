@@ -13,7 +13,7 @@ protocol APIProviderBase {
     func exec<T: APIRequest>(request: T) -> Observable<T.Response>
 }
 
-class APIProvider: APIProviderBase {
+final class APIProvider: APIProviderBase {
 
     struct Dependency {
         var session: RxSessionBase

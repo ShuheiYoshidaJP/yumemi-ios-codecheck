@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class MainViewController: UIViewController {
+final class MainViewController: UIViewController {
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var tableView: UITableView!
 

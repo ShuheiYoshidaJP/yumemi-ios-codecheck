@@ -13,7 +13,7 @@ protocol RxSessionBase {
     func response(request: URLRequest) -> Observable<(response: HTTPURLResponse, data: Data)>
 }
 
-class RxSession: RxSessionBase {
+final class RxSession: RxSessionBase {
 
     private let session: URLSession
 
