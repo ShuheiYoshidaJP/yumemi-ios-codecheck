@@ -18,7 +18,7 @@ https://github.com/ShuheiYoshidaJP/yumemi-ios-codecheck/blob/280e83fcd5dd5336678
 
 https://github.com/ShuheiYoshidaJP/yumemi-ios-codecheck/blob/280e83fcd5dd53366789115abd940f2c78cef1bd/iOSEngineerCodeCheck/API/RxSession.swift#L16
 
-リクエストのテスト
+## APIのテスト
 
 モックの作成
 
