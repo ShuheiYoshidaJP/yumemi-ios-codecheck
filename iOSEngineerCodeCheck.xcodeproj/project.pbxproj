@@ -15,6 +15,7 @@
 		0252E64A2953DA7000E49EF6 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0252E6492953DA7000E49EF6 /* APIRequest.swift */; };
 		0252E64C2953DA7B00E49EF6 /* GithubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0252E64B2953DA7B00E49EF6 /* GithubAPI.swift */; };
 		0252E64E2953DA8600E49EF6 /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0252E64D2953DA8600E49EF6 /* APIProvider.swift */; };
+		0252E6512953DB8000E49EF6 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0252E6502953DB8000E49EF6 /* MainViewModel.swift */; };
 		7085FAFB2AA5F77C2A3BAAAC /* Pods_iOSEngineerCodeCheck_iOSEngineerCodeCheckUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A519CB7AF41B6F80714DCD41 /* Pods_iOSEngineerCodeCheck_iOSEngineerCodeCheckUITests.framework */; };
 		8A8DFC6EF753FB9C0867FD0A /* Pods_iOSEngineerCodeCheckTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F53169A56E171F86449641 /* Pods_iOSEngineerCodeCheckTests.framework */; };
 		BF0A658D244F2A3B00280FA6 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A658C244F2A3B00280FA6 /* ViewController2.swift */; };
@@ -55,6 +56,7 @@
 		0252E6492953DA7000E49EF6 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		0252E64B2953DA7B00E49EF6 /* GithubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubAPI.swift; sourceTree = "<group>"; };
 		0252E64D2953DA8600E49EF6 /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
+		0252E6502953DB8000E49EF6 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		253940351E171C9F892326D6 /* Pods_iOSEngineerCodeCheck.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSEngineerCodeCheck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E4C200826C3F797F4263E6B /* Pods-iOSEngineerCodeCheck.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSEngineerCodeCheck.release.xcconfig"; path = "Target Support Files/Pods-iOSEngineerCodeCheck/Pods-iOSEngineerCodeCheck.release.xcconfig"; sourceTree = "<group>"; };
 		72B44C0FFCDE924F2C8EF7DF /* Pods-iOSEngineerCodeCheck-iOSEngineerCodeCheckUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSEngineerCodeCheck-iOSEngineerCodeCheckUITests.release.xcconfig"; path = "Target Support Files/Pods-iOSEngineerCodeCheck-iOSEngineerCodeCheckUITests/Pods-iOSEngineerCodeCheck-iOSEngineerCodeCheckUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -131,6 +133,14 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		0252E64F2953DB5D00E49EF6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0252E6502953DB8000E49EF6 /* MainViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		1271D03371F24D18888F1059 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +191,7 @@
 			children = (
 				0252E6462953DA3B00E49EF6 /* API */,
 				0252E6392953D8B000E49EF6 /* Entity */,
+				0252E64F2953DB5D00E49EF6 /* ViewModel */,
 				BFD945DE244DC5E80012785A /* AppDelegate.swift */,
 				BFD945E0244DC5E80012785A /* SceneDelegate.swift */,
 				BFD945E2244DC5E80012785A /* ViewController.swift */,
@@ -474,6 +485,7 @@
 				0252E63D2953D93F00E49EF6 /* RepoResponse.swift in Sources */,
 				0252E63B2953D90E00E49EF6 /* Repo.swift in Sources */,
 				0252E6412953D98200E49EF6 /* SearchError.swift in Sources */,
+				0252E6512953DB8000E49EF6 /* MainViewModel.swift in Sources */,
 				0252E64E2953DA8600E49EF6 /* APIProvider.swift in Sources */,
 				BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */,
 				BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */,
