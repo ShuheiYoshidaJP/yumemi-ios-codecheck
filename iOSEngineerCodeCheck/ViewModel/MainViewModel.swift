@@ -27,10 +27,13 @@ final class MainViewModel {
 
     struct Input {
         let searchText: Observable<String>
+        let itemSelected: Observable<IndexPath>
+        let modelSelected: Observable<Repo>
     }
 
     struct Output {
         let repos: Observable<[Repo]>
+        let itemSelected: Observable<(IndexPath, Repo)>
     }
 
     private let dependency: Dependency
@@ -55,6 +58,8 @@ final class MainViewModel {
             .catchAndReturn(RepoResponse.empty)
             .map { $0.items }
 
-        return Output(repos: repos)
+        let zippedSelected = Observable.zip(input.itemSelected, input.modelSelected)
+
+        return Output(repos: repos, itemSelected: zippedSelected)
     }
 }
