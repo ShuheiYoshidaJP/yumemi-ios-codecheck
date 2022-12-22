@@ -16,12 +16,12 @@ protocol APIProviderBase {
 class APIProvider: APIProviderBase {
 
     struct Dependency {
-        var session: URLSession
+        var session: RxSessionBase
         var decoder: JSONDecoder
 
         public static var `default`: Dependency {
             Dependency(
-                session: .shared,
+                session: RxSession.init(),
                 decoder: .init()
             )
         }
@@ -38,7 +38,7 @@ class APIProvider: APIProviderBase {
             .compactMap { $0 }
             .map { URLRequest(url: $0) }
         let response = uRequest.flatMap {
-            self.dependency.session.rx.response(request: $0)
+            self.dependency.session.response(request: $0)
         }.map { response, data -> T.Response in
             if 200..<300 ~= response.statusCode {
                 do {
