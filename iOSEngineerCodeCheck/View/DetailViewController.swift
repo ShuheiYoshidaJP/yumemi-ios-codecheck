@@ -18,6 +18,7 @@ final class DetailViewController: UIViewController {
     @IBOutlet private weak var languageLabel: UILabel!
     @IBOutlet private weak var ownerLabel: UILabel!
     @IBOutlet private weak var watcherLabel: UILabel!
+    @IBOutlet private weak var starsLabel: UILabel!
     @IBOutlet private weak var forkLabel: UILabel!
     @IBOutlet private weak var issueLabel: UILabel!
 
@@ -31,6 +32,7 @@ final class DetailViewController: UIViewController {
         languageLabel.text = item.language
         ownerLabel.text = item.owner.login
         watcherLabel.text = String(item.watchersCount)+"people"
+        starsLabel.text = String(item.stars)+"stars"
         forkLabel.text = String(item.forksCount)+"forks"
         issueLabel.text = String(item.openIssuesCount)+"issues"
     }

@@ -24,6 +24,9 @@ public struct Repo {
     /// 言語
     public let language: String?
 
+    /// スター数
+    public let stars: Int
+
     /// 監視人数
     public let watchersCount: Int
 
@@ -48,6 +51,7 @@ extension Repo: Codable {
         case fullName = "full_name"
         case owner
         case language
+        case stars = "stargazers_count"
         case watchersCount = "watchers_count"
         case forksCount = "forks_count"
         case openIssuesCount = "open_issues_count"
