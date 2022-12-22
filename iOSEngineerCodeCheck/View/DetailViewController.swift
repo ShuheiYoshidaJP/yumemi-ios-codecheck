@@ -20,7 +20,6 @@ final class DetailViewController: UIViewController {
     @IBOutlet private weak var watcherLabel: UILabel!
     @IBOutlet private weak var forkLabel: UILabel!
     @IBOutlet private weak var issueLabel: UILabel!
-    @IBOutlet private weak var descriptionLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +33,5 @@ final class DetailViewController: UIViewController {
         watcherLabel.text = String(item.watchersCount)+"people"
         forkLabel.text = String(item.forksCount)+"forks"
         issueLabel.text = String(item.openIssuesCount)+"issues"
-        descriptionLabel.text = item.description
     }
 }

@@ -33,9 +33,6 @@ public struct Repo {
     /// issueの数
     public let openIssuesCount: Int
 
-    /// 詳細
-    public let description: String?
-
 }
 
 extension Repo: Equatable {
@@ -54,6 +51,5 @@ extension Repo: Codable {
         case watchersCount = "watchers_count"
         case forksCount = "forks_count"
         case openIssuesCount = "open_issues_count"
-        case description
     }
 }
