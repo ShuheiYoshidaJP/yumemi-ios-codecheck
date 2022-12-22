@@ -11,24 +11,31 @@ import Foundation
 struct GithubAPIRequest: APIRequest {
     typealias Response = RepoResponse
 
-    enum RequestType { case searchRepository(String, Int) }
+    enum RequestType {
+        /// リポジトリの検索
+        /// - Parameter String: 検索ワード
+        /// - Parameter Int: 1リクエストあたりのリポジトリ数
+        case searchingRepo(String, Int)
+    }
 
     var requestType: RequestType
 
     var path: String {
         switch requestType {
-        case .searchRepository:
+        case .searchingRepo:
             return "/search/repositories"
         }
     }
 
     var parameters: [String: String] {
         switch requestType {
-        case .searchRepository(let searchText, let page):
+        case .searchingRepo(let searchText, let page):
             return ["q": searchText, "page": String(page)]
         }
     }
 
+    /// リクエストURL
+    /// - Returns: ベースURL, パス, パラメータを含めたURLを返す
     var url: URL? {
         var components = URLComponents(string: baseURL + path)
         components?.queryItems = parameters.map { (key, value) in

@@ -22,7 +22,7 @@ final class GithubAPI: GithubAPIBase {
     }
 
     func fetchRepository(inputText: String) -> Observable<RepoResponse> {
-        let githubAPIReq = GithubAPIRequest(requestType: .searchRepository(inputText, 30))
+        let githubAPIReq = GithubAPIRequest(requestType: .searchingRepo(inputText, 30))
         return provider.exec(request: githubAPIReq)
     }
 }
