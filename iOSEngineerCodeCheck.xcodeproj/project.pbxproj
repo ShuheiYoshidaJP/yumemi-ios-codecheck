@@ -12,6 +12,9 @@
 		020B04072953EEE900E77F25 /* APIProviderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020B04062953EEE900E77F25 /* APIProviderTest.swift */; };
 		020B04092953F24F00E77F25 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020B04082953F24F00E77F25 /* URLSessionMock.swift */; };
 		020B040B2953FF5800E77F25 /* RxSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020B040A2953FF5800E77F25 /* RxSession.swift */; };
+		020B04102954541D00E77F25 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020B040E2954541D00E77F25 /* DetailViewController.swift */; };
+		020B04112954541D00E77F25 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 020B040F2954541D00E77F25 /* DetailViewController.xib */; };
+		020B04132954555C00E77F25 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020B04122954555C00E77F25 /* UIViewControllerExtension.swift */; };
 		0252E63B2953D90E00E49EF6 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0252E63A2953D90E00E49EF6 /* Repo.swift */; };
 		0252E63D2953D93F00E49EF6 /* RepoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0252E63C2953D93F00E49EF6 /* RepoResponse.swift */; };
 		0252E63F2953D96100E49EF6 /* ResponseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0252E63E2953D96100E49EF6 /* ResponseType.swift */; };
@@ -57,6 +60,9 @@
 		020B04062953EEE900E77F25 /* APIProviderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProviderTest.swift; sourceTree = "<group>"; };
 		020B04082953F24F00E77F25 /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
 		020B040A2953FF5800E77F25 /* RxSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSession.swift; sourceTree = "<group>"; };
+		020B040E2954541D00E77F25 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		020B040F2954541D00E77F25 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		020B04122954555C00E77F25 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		0252E63A2953D90E00E49EF6 /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
 		0252E63C2953D93F00E49EF6 /* RepoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoResponse.swift; sourceTree = "<group>"; };
 		0252E63E2953D96100E49EF6 /* ResponseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseType.swift; sourceTree = "<group>"; };
@@ -128,6 +134,14 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		020B04142954562D00E77F25 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				020B04122954555C00E77F25 /* UIViewControllerExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		0252E6392953D8B000E49EF6 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +180,8 @@
 				BFD945E4244DC5E80012785A /* Main.storyboard */,
 				020B04012953DDF500E77F25 /* RepoTableViewCell.swift */,
 				020B04022953DDF500E77F25 /* RepoTableViewCell.xib */,
+				020B040E2954541D00E77F25 /* DetailViewController.swift */,
+				020B040F2954541D00E77F25 /* DetailViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -218,6 +234,7 @@
 		BFD945DD244DC5E80012785A /* iOSEngineerCodeCheck */ = {
 			isa = PBXGroup;
 			children = (
+				020B04142954562D00E77F25 /* Extension */,
 				0252E6462953DA3B00E49EF6 /* API */,
 				0252E6392953D8B000E49EF6 /* Entity */,
 				0252E64F2953DB5D00E49EF6 /* ViewModel */,
@@ -362,6 +379,7 @@
 			files = (
 				BFD945EB244DC5EB0012785A /* LaunchScreen.storyboard in Resources */,
 				BFD945E8244DC5EB0012785A /* Assets.xcassets in Resources */,
+				020B04112954541D00E77F25 /* DetailViewController.xib in Resources */,
 				BFD945E6244DC5E80012785A /* Main.storyboard in Resources */,
 				020B04042953DDF500E77F25 /* RepoTableViewCell.xib in Resources */,
 			);
@@ -513,6 +531,7 @@
 				0252E63D2953D93F00E49EF6 /* RepoResponse.swift in Sources */,
 				020B04032953DDF500E77F25 /* RepoTableViewCell.swift in Sources */,
 				0252E63B2953D90E00E49EF6 /* Repo.swift in Sources */,
+				020B04132954555C00E77F25 /* UIViewControllerExtension.swift in Sources */,
 				0252E6412953D98200E49EF6 /* SearchError.swift in Sources */,
 				0252E6512953DB8000E49EF6 /* MainViewModel.swift in Sources */,
 				0252E64E2953DA8600E49EF6 /* APIProvider.swift in Sources */,
@@ -521,6 +540,7 @@
 				0252E6482953DA5D00E49EF6 /* GithubAPIRequest.swift in Sources */,
 				0252E64A2953DA7000E49EF6 /* APIRequest.swift in Sources */,
 				0252E64C2953DA7B00E49EF6 /* GithubAPI.swift in Sources */,
+				020B04102954541D00E77F25 /* DetailViewController.swift in Sources */,
 				020B040B2953FF5800E77F25 /* RxSession.swift in Sources */,
 				0252E63F2953D96100E49EF6 /* ResponseType.swift in Sources */,
 			);
