@@ -17,6 +17,25 @@ public struct Repo {
 
     /// リポジトリのフルネーム
     public let fullName: String
+
+    /// リポジトリの所有者
+    public let owner: Owner
+
+    /// 言語
+    public let language: String?
+
+    /// 監視人数
+    public let watchersCount: Int
+
+    /// フォーク数
+    public let forksCount: Int
+
+    /// issueの数
+    public let openIssuesCount: Int
+
+    /// 詳細
+    public let description: String?
+
 }
 
 extension Repo: Equatable {
@@ -30,5 +49,11 @@ extension Repo: Codable {
         case id
         case name
         case fullName = "full_name"
+        case owner
+        case language
+        case watchersCount = "watchers_count"
+        case forksCount = "forks_count"
+        case openIssuesCount = "open_issues_count"
+        case description
     }
 }
