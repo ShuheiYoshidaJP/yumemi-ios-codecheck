@@ -9,7 +9,13 @@
 import Foundation
 
 enum SearchError: Error {
+    /// サーチバーに入力された文字数が少ない
     case fewCharacters
+
+    /// データの変換に失敗
     case decodeJson
+
+    /// ネットワークエラー
+    /// - Parameter ステータスコード
     case network(Int)
 }

@@ -9,8 +9,7 @@
 import UIKit
 import RxSwift
 
-class MainViewController: UIViewController {
-
+final class MainViewController: UIViewController {
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var tableView: UITableView!
 
@@ -20,14 +19,18 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpBinding()
-        setUpSearchBar()
+        self.tableView.keyboardDismissMode = .onDrag
     }
 }
 
 extension MainViewController {
 
     private func setUpBinding() {
-        let input = MainViewModel.Input(searchText: searchBar.rx.text.orEmpty.asObservable())
+        let input = MainViewModel.Input(
+            searchText: searchBar.rx.text.orEmpty.asObservable(),
+            itemSelected: tableView.rx.itemSelected.asObservable(),
+            modelSelected: tableView.rx.modelSelected(Repo.self).asObservable()
+        )
         let output = viewModel.transform(input: input)
 
         tableView.register(UINib(nibName: "RepoTableViewCell", bundle: nil), forCellReuseIdentifier: "RepoTableViewCell")
@@ -38,21 +41,19 @@ extension MainViewController {
         }
         .disposed(by: disposeBag)
 
-        tableView.rx.modelSelected(Repo.self).subscribe(onNext: { item in
-            print("SelectedItem: \(item.name)")
-        }).disposed(by: disposeBag)
-    }
+        output.itemSelected.bind { indexPath, item in
+            self.tableView.deselectRow(at: indexPath, animated: false)
+            self.showDetail(item: item)
+        }
+        .disposed(by: disposeBag)
 
+    }
 }
 
 extension MainViewController {
-
-    @objc private func doneButtonTapped() {
-        view.endEditing(true)
-    }
-
-    private func setUpSearchBar() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(doneButtonTapped))
-        view.addGestureRecognizer(tap)
+    private func showDetail(item: Repo) {
+        let dvc = DetailViewController.initFromNib()
+        dvc.item = item
+        self.navigationController?.pushViewController(dvc, animated: true)
     }
 }

@@ -10,9 +10,9 @@ import XCTest
 import RxSwift
 @testable import iOSEngineerCodeCheck
 
-class APIProviderTest: XCTestCase {
+final class APIProviderTest: XCTestCase {
 
-    private let requestType: GithubAPIRequest.RequestType = .searchRepository("Swift", 30)
+    private let requestType: GithubAPIRequest.RequestType = .searchingRepo("Swift", 30)
     private var request: GithubAPIRequest!
     private let disposeBag = DisposeBag()
 
