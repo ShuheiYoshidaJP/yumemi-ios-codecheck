@@ -9,8 +9,13 @@
 import Foundation
 
 public struct Repo {
+    /// リポジトリのID
     public let id: Int
+    
+    /// リポジトリの名前
     public let name: String
+    
+    /// リポジトリのフルネーム
     public let fullName: String
 }
 
