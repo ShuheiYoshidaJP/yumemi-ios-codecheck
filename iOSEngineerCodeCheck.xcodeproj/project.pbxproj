@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		020B04032953DDF500E77F25 /* RepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020B04012953DDF500E77F25 /* RepoTableViewCell.swift */; };
+		020B04042953DDF500E77F25 /* RepoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 020B04022953DDF500E77F25 /* RepoTableViewCell.xib */; };
 		0252E63B2953D90E00E49EF6 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0252E63A2953D90E00E49EF6 /* Repo.swift */; };
 		0252E63D2953D93F00E49EF6 /* RepoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0252E63C2953D93F00E49EF6 /* RepoResponse.swift */; };
 		0252E63F2953D96100E49EF6 /* ResponseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0252E63E2953D96100E49EF6 /* ResponseType.swift */; };
@@ -48,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		020B04012953DDF500E77F25 /* RepoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableViewCell.swift; sourceTree = "<group>"; };
+		020B04022953DDF500E77F25 /* RepoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoTableViewCell.xib; sourceTree = "<group>"; };
 		0252E63A2953D90E00E49EF6 /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
 		0252E63C2953D93F00E49EF6 /* RepoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoResponse.swift; sourceTree = "<group>"; };
 		0252E63E2953D96100E49EF6 /* ResponseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseType.swift; sourceTree = "<group>"; };
@@ -146,6 +150,8 @@
 			children = (
 				BFD945E2244DC5E80012785A /* MainViewController.swift */,
 				BFD945E4244DC5E80012785A /* Main.storyboard */,
+				020B04012953DDF500E77F25 /* RepoTableViewCell.swift */,
+				020B04022953DDF500E77F25 /* RepoTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -343,6 +349,7 @@
 				BFD945EB244DC5EB0012785A /* LaunchScreen.storyboard in Resources */,
 				BFD945E8244DC5EB0012785A /* Assets.xcassets in Resources */,
 				BFD945E6244DC5E80012785A /* Main.storyboard in Resources */,
+				020B04042953DDF500E77F25 /* RepoTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +498,7 @@
 				BFD945E3244DC5E80012785A /* MainViewController.swift in Sources */,
 				BF0A658D244F2A3B00280FA6 /* ViewController2.swift in Sources */,
 				0252E63D2953D93F00E49EF6 /* RepoResponse.swift in Sources */,
+				020B04032953DDF500E77F25 /* RepoTableViewCell.swift in Sources */,
 				0252E63B2953D90E00E49EF6 /* Repo.swift in Sources */,
 				0252E6412953D98200E49EF6 /* SearchError.swift in Sources */,
 				0252E6512953DB8000E49EF6 /* MainViewModel.swift in Sources */,
